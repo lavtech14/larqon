@@ -4,7 +4,7 @@ import { FiMail, FiMessageCircle, FiArrowRight } from "react-icons/fi";
 
 export default function Contact() {
   const email = "larqontech@gmail.com";
-  const whatsappNumber = "919876543210";
+  const whatsappNumber = "919666753505";
 
   const whatsappMessage = encodeURIComponent(
     "Hi Larqon Tech, I'm interested in discussing a project.",
