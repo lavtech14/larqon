@@ -1,14 +1,17 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import WhyChooseUs from './components/WhyChooseUs';
-import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import Portfolio from "./components/Portfolio";
+import WhyChooseUs from "./components/WhyChooseUs";
+// import Testimonials from './components/Testimonials';
+import Pricing from "./components/Pricing";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
+import Team from "./components/Team";
+import Technologies from "./components/Technologies";
 
 export default function App() {
   return (
@@ -23,10 +26,13 @@ export default function App() {
       <main className="relative z-10">
         <Hero />
         <About />
+        <Team />
         <Services />
+        <Technologies />
         <Portfolio />
         <WhyChooseUs />
-        <Testimonials />
+        {/* / <Testimonials /> */}
+
         <Pricing />
         <Contact />
       </main>

@@ -1,51 +1,123 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight, FiCheck } from 'react-icons/fi';
-import { FaQuoteLeft } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiChevronLeft, FiChevronRight, FiCheck } from "react-icons/fi";
+import { FaQuoteLeft } from "react-icons/fa";
 
 export default function Testimonials() {
   const reviews = [
     {
       name: "Marcus Vance",
       role: "CTO, Stratos Analytics",
-      quote: "Larqon Tech delivered a product that exceeded every performance metric we laid out. The custom React frontend runs flawlessly, and the clean design has significantly boosted our user retention. A phenomenal team.",
+      quote:
+        "Larqon Tech delivered a product that exceeded every performance metric we laid out. The custom React frontend runs flawlessly, and the clean design has significantly boosted our user retention. A phenomenal team.",
       color: "from-gold/20 to-charcoal",
       initials: "MV",
       logo: (
-        <svg className="w-16 h-6 text-gold opacity-60" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="10" r="6" stroke="currentColor" strokeWidth="1.5" />
+        <svg
+          className="w-16 h-6 text-gold opacity-60"
+          viewBox="0 0 80 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="10"
+            cy="10"
+            r="6"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
           <circle cx="20" cy="10" r="4" fill="currentColor" />
-          <text x="32" y="14" fill="#F5F5F5" fontSize="10" fontWeight="bold" letterSpacing="1">STRATOS</text>
+          <text
+            x="32"
+            y="14"
+            fill="#F5F5F5"
+            fontSize="10"
+            fontWeight="bold"
+            letterSpacing="1"
+          >
+            STRATOS
+          </text>
         </svg>
-      )
+      ),
     },
     {
       name: "Elena Rostova",
       role: "VP of Product, NovaPay",
-      quote: "Collaborating with Larqon Tech to build our digital payment ecosystem was the best decision of the year. Their team acts as design purists and technical virtuosos. The level of responsive detail in their work is unmatched.",
+      quote:
+        "Collaborating with Larqon Tech to build our digital payment ecosystem was the best decision of the year. Their team acts as design purists and technical virtuosos. The level of responsive detail in their work is unmatched.",
       color: "from-accentBlue/20 to-charcoal",
       initials: "ER",
       logo: (
-        <svg className="w-16 h-6 text-accentBlue opacity-60" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 5,5 L 20,5 L 12.5,15 Z" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.1" />
-          <text x="28" y="14" fill="#F5F5F5" fontSize="10" fontWeight="bold" letterSpacing="1">NOVAPAY</text>
+        <svg
+          className="w-16 h-6 text-accentBlue opacity-60"
+          viewBox="0 0 80 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 5,5 L 20,5 L 12.5,15 Z"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            fill="currentColor"
+            fillOpacity="0.1"
+          />
+          <text
+            x="28"
+            y="14"
+            fill="#F5F5F5"
+            fontSize="10"
+            fontWeight="bold"
+            letterSpacing="1"
+          >
+            NOVAPAY
+          </text>
         </svg>
-      )
+      ),
     },
     {
       name: "Alexander Sterling",
       role: "Founder, Apex Lifestyle",
-      quote: "The design aesthetics Larqon Tech brought to our mobile ecosystem are Apple-grade. Clean typography, premium spacing, and extremely smooth transitions. Our conversion rate increased by 45% immediately after release.",
+      quote:
+        "The design aesthetics Larqon Tech brought to our mobile ecosystem are Apple-grade. Clean typography, premium spacing, and extremely smooth transitions. Our conversion rate increased by 45% immediately after release.",
       color: "from-white/10 to-charcoal",
       initials: "AS",
       logo: (
-        <svg className="w-16 h-6 text-warmWhite opacity-60" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="4" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
-          <line x1="11" y1="4" x2="11" y2="16" stroke="currentColor" strokeWidth="1" />
-          <text x="24" y="14" fill="#F5F5F5" fontSize="10" fontWeight="bold" letterSpacing="1">APEX</text>
+        <svg
+          className="w-16 h-6 text-warmWhite opacity-60"
+          viewBox="0 0 80 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="5"
+            y="4"
+            width="12"
+            height="12"
+            rx="2"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="11"
+            y1="4"
+            x2="11"
+            y2="16"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <text
+            x="24"
+            y="14"
+            fill="#F5F5F5"
+            fontSize="10"
+            fontWeight="bold"
+            letterSpacing="1"
+          >
+            APEX
+          </text>
         </svg>
-      )
-    }
+      ),
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -72,28 +144,30 @@ export default function Testimonials() {
   const slideVariants = {
     enter: (dir) => ({
       x: dir > 0 ? 100 : -100,
-      opacity: 0
+      opacity: 0,
     }),
     center: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" },
     },
     exit: (dir) => ({
       x: dir < 0 ? 100 : -100,
       opacity: 0,
-      transition: { duration: 0.4, ease: "easeIn" }
-    })
+      transition: { duration: 0.4, ease: "easeIn" },
+    }),
   };
 
   return (
-    <section id="testimonials" className="relative py-24 bg-charcoal overflow-hidden border-t border-white/5">
+    <section
+      id="testimonials"
+      className="relative py-24 bg-charcoal overflow-hidden border-t border-white/5"
+    >
       {/* Background glow orb */}
       <div className="absolute top-[20%] left-0 glow-orb-blue w-[400px] h-[400px] opacity-25"></div>
       <div className="absolute bottom-[20%] right-0 glow-orb-gold w-[400px] h-[400px] opacity-25"></div>
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
-        
         {/* Section Header */}
         <div className="text-center mb-16">
           <motion.h4
@@ -119,7 +193,6 @@ export default function Testimonials() {
 
         {/* Carousel Slider Panel */}
         <div className="relative min-h-[360px] flex items-center justify-center">
-          
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={currentIndex}
@@ -165,9 +238,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Company Logo representation */}
-                <div className="shrink-0">
-                  {reviews[currentIndex].logo}
-                </div>
+                <div className="shrink-0">{reviews[currentIndex].logo}</div>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -201,13 +272,14 @@ export default function Testimonials() {
                 setCurrentIndex(idx);
               }}
               className={`h-2.5 rounded-full transition-all duration-500 ${
-                currentIndex === idx ? 'w-8 bg-gold' : 'w-2.5 bg-white/10 hover:bg-white/20'
+                currentIndex === idx
+                  ? "w-8 bg-gold"
+                  : "w-2.5 bg-white/10 hover:bg-white/20"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             ></button>
           ))}
         </div>
-
       </div>
     </section>
   );
